@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="##一、前言在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是Win7、Win8或者Win10了，并且这些系统中并没有debug程序，没有masm汇编编译器。没有这两个东西，我们的编译环境也就没有了。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。软件需求：1.DOS">
+<meta name="description" content="一、前言在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是64位的 Win7、Win8或者Win10，64位Windows系统不再支持在命令提示符窗口下进入debug调试模式。同时我们还需要一个masm汇编编译器。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。软件需">
 <meta name="keywords" content="汇编语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win7-8-10下的汇编语言环境搭建">
+<meta property="og:title" content="Windows 64位系统下的汇编语言环境搭建">
 <meta property="og:url" content="http://yoursite.com/2018/08/12/Win7-8-10下的汇编语言环境搭建/index.html">
 <meta property="og:site_name" content="NoJacky">
-<meta property="og:description" content="##一、前言在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是Win7、Win8或者Win10了，并且这些系统中并没有debug程序，没有masm汇编编译器。没有这两个东西，我们的编译环境也就没有了。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。软件需求：1.DOS">
+<meta property="og:description" content="一、前言在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是64位的 Win7、Win8或者Win10，64位Windows系统不再支持在命令提示符窗口下进入debug调试模式。同时我们还需要一个masm汇编编译器。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。软件需">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-12T03:57:17.244Z">
+<meta property="og:updated_time" content="2018-08-12T08:29:24.255Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win7-8-10下的汇编语言环境搭建">
-<meta name="twitter:description" content="##一、前言在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是Win7、Win8或者Win10了，并且这些系统中并没有debug程序，没有masm汇编编译器。没有这两个东西，我们的编译环境也就没有了。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。软件需求：1.DOS">
+<meta name="twitter:title" content="Windows 64位系统下的汇编语言环境搭建">
+<meta name="twitter:description" content="一、前言在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是64位的 Win7、Win8或者Win10，64位Windows系统不再支持在命令提示符窗口下进入debug调试模式。同时我们还需要一个masm汇编编译器。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。软件需">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>Win7-8-10下的汇编语言环境搭建 | NoJacky</title>
+  <title>Windows 64位系统下的汇编语言环境搭建 | NoJacky</title>
   
 
 
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Win7-8-10下的汇编语言环境搭建</h1>
+          <h1 class="post-title" itemprop="name headline">Windows 64位系统下的汇编语言环境搭建</h1>
         
 
         <div class="post-meta">
@@ -343,7 +343,7 @@
 
           
           
-             <span id="/2018/08/12/Win7-8-10下的汇编语言环境搭建/" class="leancloud_visitors" data-flag-title="Win7-8-10下的汇编语言环境搭建">
+             <span id="/2018/08/12/Win7-8-10下的汇编语言环境搭建/" class="leancloud_visitors" data-flag-title="Windows 64位系统下的汇编语言环境搭建">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -374,10 +374,14 @@
       
 
       
-        <p>##一、前言<br>在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是Win7、Win8或者Win10了，并且这些系统中并没有debug程序，没有masm汇编编译器。没有这两个东西，我们的编译环境也就没有了。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。<br>软件需求：<br>1.DOSBox 0.74版<br>2.Debug.exe<br>3.masm5.0汇编编译器</p>
-<p>##二、软件下载<br>这里提供了三个软件的百度云下载方式：<br><a href="https://pan.baidu.com/s/14zaUw3bRV9FQvTRTyUbLFw" target="_blank" rel="noopener">下载地址</a> 密码：r5qc</p>
-<p>##三、</p>
-
+        <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是64位的 Win7、Win8或者Win10，64位Windows系统不再支持在命令提示符窗口下进入debug调试模式。同时我们还需要一个masm汇编编译器。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。<br>软件需求：<br>1.DOSBox 0.74版 （DOSBox是一个模拟软件，没有这个软件，Debug.exe和masm编译器也就无法运行。）<br>2.Debug.exe<br>3.masm5.0汇编编译器</p>
+<h2 id="二、软件下载、安装、配置"><a href="#二、软件下载、安装、配置" class="headerlink" title="二、软件下载、安装、配置"></a>二、软件下载、安装、配置</h2><h3 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h3><p>这里提供了三个软件的百度云下载方式：<br><a href="https://pan.baidu.com/s/14zaUw3bRV9FQvTRTyUbLFw" target="_blank" rel="noopener">下载地址</a> 密码：r5qc</p>
+<h3 id="2-2-安装"><a href="#2-2-安装" class="headerlink" title="2.2 安装"></a>2.2 安装</h3><ol>
+<li>首先在你的电脑上安装DOSBox，默认安装即可。我们也可以选择安装到其他自定义目录，但是一定要记住你的安装路径！！！这里我选择安装到H盘，目录名为H:\DOSBox-0.74。</li>
+<li>安装完成后，我们找到 debug.exe，并把它放到一个喜欢的位置上。为了方便管理，我这里直接放在DOSBox的安装路径了，即H:\DOSBox-0.74。</li>
+<li></li>
+</ol>
+<h3 id="2-3配置"><a href="#2-3配置" class="headerlink" title="2.3配置"></a>2.3配置</h3><h2 id="三、测试"><a href="#三、测试" class="headerlink" title="三、测试"></a>三、测试</h2>
       
     </div>
     
@@ -446,6 +450,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/08/17/王爽《汇编语言》(第三版)实验8解析/" rel="prev" title="王爽《汇编语言》(第三版)实验8解析">
+                王爽《汇编语言》(第三版)实验8解析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -506,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -526,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -537,7 +554,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -548,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -587,6 +604,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、软件下载、安装、配置"><span class="nav-number">2.</span> <span class="nav-text">二、软件下载、安装、配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-下载"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-安装"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3配置"><span class="nav-number">2.3.</span> <span class="nav-text">2.3配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、测试"><span class="nav-number">3.</span> <span class="nav-text">三、测试</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -760,7 +793,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2018/08/12/Win7-8-10下的汇编语言环境搭建/';
           this.page.identifier = '2018/08/12/Win7-8-10下的汇编语言环境搭建/';
-          this.page.title = 'Win7-8-10下的汇编语言环境搭建';
+          this.page.title = 'Windows 64位系统下的汇编语言环境搭建';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
