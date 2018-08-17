@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="NoJacky">
 <meta property="og:description" content="一、前言在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是64位的 Win7、Win8或者Win10，64位Windows系统不再支持在命令提示符窗口下进入debug调试模式。同时我们还需要一个masm汇编编译器。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。软件需">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-12T08:29:24.255Z">
+<meta property="og:updated_time" content="2018-08-17T07:14:49.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows 64位系统下的汇编语言环境搭建">
 <meta name="twitter:description" content="一、前言在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是64位的 Win7、Win8或者Win10，64位Windows系统不再支持在命令提示符窗口下进入debug调试模式。同时我们还需要一个masm汇编编译器。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。软件需">
@@ -375,6 +375,7 @@
 
       
         <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>在学习王爽教授的《汇编语言》的时候，我们需要搭建一个汇编语言的运行环境。但是他的书本是以Windows 2000为运行环境的，早已过时。我们现在的大部分人使用的操作系统都是64位的 Win7、Win8或者Win10，64位Windows系统不再支持在命令提示符窗口下进入debug调试模式。同时我们还需要一个masm汇编编译器。所以今天，我将带领你在“现代”操作系统上搭建一个汇编环境。<br>软件需求：<br>1.DOSBox 0.74版 （DOSBox是一个模拟软件，没有这个软件，Debug.exe和masm编译器也就无法运行。）<br>2.Debug.exe<br>3.masm5.0汇编编译器</p>
+<a id="more"></a>
 <h2 id="二、软件下载、安装、配置"><a href="#二、软件下载、安装、配置" class="headerlink" title="二、软件下载、安装、配置"></a>二、软件下载、安装、配置</h2><h3 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h3><p>这里提供了三个软件的百度云下载方式：<br><a href="https://pan.baidu.com/s/14zaUw3bRV9FQvTRTyUbLFw" target="_blank" rel="noopener">下载地址</a> 密码：r5qc</p>
 <h3 id="2-2-安装"><a href="#2-2-安装" class="headerlink" title="2.2 安装"></a>2.2 安装</h3><ol>
 <li>首先在你的电脑上安装DOSBox，默认安装即可。我们也可以选择安装到其他自定义目录，但是一定要记住你的安装路径！！！这里我选择安装到H盘，目录名为H:\DOSBox-0.74。</li>
