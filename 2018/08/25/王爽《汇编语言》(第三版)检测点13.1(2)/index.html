@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="NoJacky">
 <meta property="og:description" content="用7ch终端例程完成 jmp near ptr s指令的功能.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-25T03:00:48.092Z">
+<meta property="og:updated_time" content="2018-08-27T11:09:17.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="王爽《汇编语言》(第三版)检测点13.1(2)">
 <meta name="twitter:description" content="用7ch终端例程完成 jmp near ptr s指令的功能.">
@@ -375,23 +375,11 @@
 
       
         <blockquote>
-<p>用7ch终端例程完成 <code>jmp near ptr s</code>指令的功能.<br><a id="more"></a><br>    以下为安装程序代码：<br><code>`</code> x86asm<br>assume cs:code</p>
+<p>用7ch终端例程完成 <code>jmp near ptr s</code>指令的功能.</p>
 </blockquote>
-<p>code segment</p>
-<p>start:    mov ax,cs<br>        mov ds,ax<br>        mov si,offset do0<br>        mov ax,0<br>        mov es,ax<br>        mov di,200h<br>        mov cx,offset do0end - offset do0<br>        cld<br>        rep movsb<br>        mov ax,0<br>        mov es,ax<br>        mov word ptr es:[7ch<em>4],200h<br>        mov word ptr es:[7ch</em>4+2],0</p>
-<pre><code>    mov ax,4c00h
-    int 21h
-
-do0:push bp
-    mov bp,sp
-    add [bp+2],bx
-    pop bp
-    iret
-    mov ax,4c00h        
-    int 21h
-do0end:
-    nop
-</code></pre><p>code ends<br>end start</p>
+<a id="more"></a>
+<p>以下为安装程序代码：</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</span><br><span class="line"></span><br><span class="line">code <span class="meta">segment</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">start:</span>	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="built_in">cs</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ds</span>,<span class="built_in">ax</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">si</span>,offset do0</span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">es</span>,<span class="built_in">ax</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">di</span>,<span class="number">200h</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">cx</span>,offset do0end - offset do0</span><br><span class="line">		<span class="keyword">cld</span></span><br><span class="line">		<span class="keyword">rep</span> <span class="keyword">movsb</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">es</span>,<span class="built_in">ax</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">word</span> <span class="built_in">ptr</span> <span class="built_in">es</span>:[<span class="number">7ch</span>*<span class="number">4</span>],<span class="number">200h</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">word</span> <span class="built_in">ptr</span> <span class="built_in">es</span>:[<span class="number">7ch</span>*<span class="number">4</span>+<span class="number">2</span>],<span class="number">0</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">		<span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">		</span><br><span class="line"><span class="symbol">	do0:</span><span class="keyword">push</span> <span class="built_in">bp</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">bp</span>,<span class="built_in">sp</span></span><br><span class="line">		<span class="keyword">add</span> [<span class="built_in">bp</span>+<span class="number">2</span>],<span class="built_in">bx</span></span><br><span class="line">		<span class="keyword">pop</span> <span class="built_in">bp</span></span><br><span class="line">		<span class="keyword">iret</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span>		</span><br><span class="line">		<span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line"><span class="symbol">	do0end:</span></span><br><span class="line">		<span class="keyword">nop</span></span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
       
     </div>
