@@ -262,6 +262,216 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/一种类似深度优先算法的全排列/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jacky">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NoJacky">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/28/一种类似深度优先算法的全排列/" itemprop="url">一种类似深度优先算法的全排列</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-28T22:09:28+08:00">
+                2018-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/28/一种类似深度优先算法的全排列/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/28/一种类似深度优先算法的全排列/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/28/一种类似深度优先算法的全排列/" class="leancloud_visitors" data-flag-title="一种类似深度优先算法的全排列">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>此题来源于《啊哈！算法》第四章第一小节</p>
+</blockquote>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>输入一个数n，输出1~n的全排列。</p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>理解深度优先算法的关键在于解决“当下该如何做”。至于“下一步怎么做”则与“当下该如何做”是一样的。<br><br>比如，我们这里写的dfs(step)函数就是为了解决在第step个数应该填入什么。通常的方法就是把每种尝试都去尝试一遍(通常使用的是for循环，例如此题)。当前这一步解决之后就可以进入到下一步dfs(Step+1)了。而下一步的解决方法和当前这一步的解决方法是完全一样的。下面的的伪代码就是深度优先算法的基本模型(DFS)。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step)</span></span>&#123;</span><br><span class="line">    判断边界</span><br><span class="line">    尝试每一种可能：<span class="keyword">for</span>()循环</span><br><span class="line">    &#123;</span><br><span class="line">        完成当前可能需要的操作</span><br><span class="line">        继续下一步 dfs(step);</span><br><span class="line">    &#125;</span><br><span class="line">    返回</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="keyword">int</span> a[<span class="number">10</span>],book[<span class="number">10</span>],n;  <span class="comment">//C语言的全局变量在没有赋值以前默认为0，因此这里的book数组无需全部再次赋初始值0 </span>
+
+<span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step)</span> <span class="comment">//step表示当前需要尝试的位</span></span>
+<span class="function"></span>{
+    <span class="keyword">int</span> i;
+    <span class="keyword">if</span>(step == n+<span class="number">1</span>) <span class="comment">//如果是第n+1位，则将前n位的输出</span>
+    {
+        <span class="comment">//输出一组全排列</span>
+        <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)
+        {
+            <span class="built_in">printf</span>(<span class="string">"%d"</span>, a[i]);
+        } 
+        <span class="built_in">printf</span>(<span class="string">"\n"</span>);        
+        <span class="keyword">return</span>;   <span class="comment">//返回之前一步，即最近一次调用dfs函数的地方，然后进行下一次尝试。 </span>
+    } 
+
+    <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++) <span class="comment">//从头到尾的尝试 </span>
+    {
+        <span class="keyword">if</span>(book[i]==<span class="number">0</span>) <span class="comment">//book[i]为0表示i号仍然在手中 </span>
+        {
+            a[step]=i; <span class="comment">//将i号放入第step位中 </span>
+            book[i]=<span class="number">1</span>; <span class="comment">//将book[i]设为1，表示i号已经不在手中</span>
+
+            dfs(step+<span class="number">1</span>); <span class="comment">//进入到下一个盒子的尝试，即是第step+1位</span>
+
+            book[i]=<span class="number">0</span>; <span class="comment">//尝试完成，将刚刚尝试的数字收回。进行下一次这一位的尝试。 </span>
+        }
+    } 
+    <span class="keyword">return</span>;
+} 
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>{
+    <span class="comment">//输入：n为 0~9之间的整数；</span>
+    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); 
+    dfs(<span class="number">1</span>); <span class="comment">//首先从第一位开始</span>
+    getchar();
+    getchar();
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/如何建立索引，提高查询速度/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -376,70 +586,14 @@
 
       
         
-          
-            <p>—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的<br>性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明<br>显。笔者在工作实践中发现，不良的SQL往往来自于不恰当的索引设计、不充份的连接条件和不可优化的where子句。在对<br>它们进行适当的优化后，其运行速度有了明显地提高！下面我将从这三个方面分别进行总结： </p>
-<p>—- 为了更直观地说明问题，所有实例中的SQL运行时间均经过测试，不超过１秒的均表示为（&lt; 1秒）。 </p>
-<p>—- 测试环境–<br>—- 主机：HP LH II<br>—- 主频：330MHZ<br>—- 内存：128兆<br>—- 操作系统：Operserver5.0.4<br>—-数据库：Sybase11.0.3 </p>
-<h3 id="一、不合理的索引设计"><a href="#一、不合理的索引设计" class="headerlink" title="一、不合理的索引设计"></a>一、不合理的索引设计</h3><p>—-例：表record有620000行，试看在不同的索引下，下面几个 SQL的运行情况： </p>
-<ol>
-<li>在date上建有一个非群集索引 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="built_in">date</span> &gt;<span class="string">'19991201'</span> <span class="keyword">and</span> <span class="built_in">date</span> &lt; <span class="string">'19991214'</span><span class="keyword">and</span> amount &gt;<span class="number">2000</span> (<span class="number">25</span>秒) </span><br><span class="line"><span class="keyword">select</span> <span class="built_in">date</span>,<span class="keyword">sum</span>(amount) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="built_in">date</span>(<span class="number">55</span>秒) </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="built_in">date</span> &gt;<span class="string">'19990901'</span> <span class="keyword">and</span> place <span class="keyword">in</span> (<span class="string">'BJ'</span>,<span class="string">'SH'</span>) (<span class="number">27</span>秒)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>—- 分析：<br>—-date上有大量的重复值，在非群集索引下，数据在物理上随机存放在数据页上，在范围查找时，必须执行一次表扫描才能找到这一范围内的全部行。 </p>
-<ol start="2">
-<li>在date上的一个群集索引 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="built_in">date</span> &gt;<span class="string">'19991201'</span> <span class="keyword">and</span> <span class="built_in">date</span> &lt; <span class="string">'19991214'</span> <span class="keyword">and</span> amount &gt;<span class="number">2000</span>（<span class="number">14</span>秒） </span><br><span class="line"><span class="keyword">select</span> <span class="built_in">date</span>,<span class="keyword">sum</span>(amount) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="built_in">date</span>（<span class="number">28</span>秒） </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="built_in">date</span> &gt;<span class="string">'19990901'</span> <span class="keyword">and</span> place <span class="keyword">in</span> (<span class="string">'BJ'</span>,<span class="string">'SH'</span>)（<span class="number">14</span>秒）</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>—- 分析：<br>—- 在群集索引下，数据在物理上按顺序在数据页上，重复值也排列在一起，因而在范围查找时，可以先找到这个范围的起末点，且只在这个范围内扫描数据页，避免了大范围扫描，提高了查询速度。 </p>
-<ol start="3">
-<li>在place，date，amount上的组合索引 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="built_in">date</span> &gt;<span class="string">'19991201'</span> <span class="keyword">and</span> <span class="built_in">date</span> &lt; <span class="string">'19991214'</span> <span class="keyword">and</span> amount &gt;<span class="number">2000</span>（<span class="number">26</span>秒） </span><br><span class="line"><span class="keyword">select</span> <span class="built_in">date</span>,<span class="keyword">sum</span>(amount) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="built_in">date</span>（<span class="number">27</span>秒） </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="built_in">date</span> &gt;<span class="string">'19990901'</span> <span class="keyword">and</span> place <span class="keyword">in</span> (<span class="string">'BJ, '</span>SH<span class="string">')（&lt; 1秒）</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>—- 分析：<br>—- 这是一个不很合理的组合索引，因为它的前导列是place，第一和第二条SQL没有引用place，因此也没有利用上索引；第三个SQL使用了place，且引用的所有列都包含在组合索引中，形成了索引覆盖，所以它的速度是非常快的。 </p>
-<ol start="4">
-<li>在date，place，amount上的组合索引 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="built_in">date</span> &gt;<span class="string">'19991201'</span> <span class="keyword">and</span> <span class="built_in">date</span> &lt; <span class="string">'19991214'</span> <span class="keyword">and</span> amount &gt;<span class="number">2000</span>(&lt; <span class="number">1</span>秒) </span><br><span class="line"><span class="keyword">select</span> <span class="built_in">date</span>,<span class="keyword">sum</span>(amount) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="built_in">date</span>（<span class="number">11</span>秒） </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="built_in">date</span> &gt;<span class="string">'19990901'</span> <span class="keyword">and</span> place <span class="keyword">in</span> (<span class="string">'BJ'</span>,<span class="string">'SH'</span>)（&lt; <span class="number">1</span>秒）</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>—- 分析：<br>—- 这是一个合理的组合索引。它将date作为前导列，使每个SQL都可以利用索引，并且在第一和第三个SQL中形成了索引覆盖，因而性能达到了最优。 </p>
-<ol start="5">
-<li>总结： </li>
-</ol>
-<p>—- 缺省情况下建立的索引是非群集索引，但有时它并不是最佳的；合理的索引设计要建立在对各种查询的分析和预测<br>上。一般来说： </p>
-<p>—- ①.有大量重复值、且经常有范围查询 </p>
-<p>（between, &gt;,&lt; ，&gt;=,&lt; =）和order by<br>、group by发生的列，可考虑建立群集索引； </p>
-<p>—- ②.经常同时存取多列，且每列都含有重复值可考虑建立组合索引； </p>
-<p>—- ③.组合索引要尽量使关键查询形成索引覆盖，其前导列一定是使用最频繁的列。 </p>
-<h3 id="二、不充分的连接条件："><a href="#二、不充分的连接条件：" class="headerlink" title="二、不充分的连接条件："></a>二、不充分的连接条件：</h3><p>—- 例：表card有7896行，在card_no上有一个非聚集索引，表account有191122行，在 account_no上有一个非聚集索引，试看在不同的表连接条件下，两个SQL的执行情况：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(a.amount) <span class="keyword">from</span> <span class="keyword">account</span> a,card b <span class="keyword">where</span> a.card_no = b.card_no（<span class="number">20</span>秒）</span><br></pre></td></tr></table></figure></p>
-<p>—- 将SQL改为：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(a.amount) <span class="keyword">from</span> <span class="keyword">account</span> a,card b <span class="keyword">where</span> a.card_no = b.card_no <span class="keyword">and</span> a.account_no=b.account_no（&lt; <span class="number">1</span>秒）</span><br></pre></td></tr></table></figure></p>
-<p>—- 分析：<br>—- 在第一个连接条件下，最佳查询方案是将account作外层表，card作内层表，利用card上的索引，其I/O次数可由以下公式估算为： </p>
-<p>—- 外层表account上的22541页+（外层表account的191122行*内层表card上对应外层表第一行所要查找的3页）=595907次I/O </p>
-<p>—- 在第二个连接条件下，最佳查询方案是将card作外层表，account作内层表，利用account上的索引，其I/O次数可由以下公式估算为： </p>
-<p>—- 外层表card上的1944页+（外层表card的7896行*内层表account上对应外层表每一行所要查找的4页）= 33528次I/O </p>
-<p>—- 可见，只有充份的连接条件，真正的最佳方案才会被执行。 </p>
-<p>—- 总结： </p>
-<p>—- 1.多表操作在被实际执行前，查询优化器会根据连接条件，列出几组可能的连接方案并从中找出系统开销最小的最佳方案。连接条件要充份考虑带有索引的表、行数多的表；内外表的选择可由公式：外层表中的匹配行数*内层表中每一次查找的次数确定，乘积最小为最佳方案。 </p>
-<p>—- 2.查看执行方案的方法– 用set showplanon，打开showplan选项，就可以看到连接顺序、使用何种索引的信息；想<br>看更详细的信息，需用sa角色执行dbcc(3604,310,302)。 </p>
-<h3 id="三、不可优化的where子句"><a href="#三、不可优化的where子句" class="headerlink" title="三、不可优化的where子句"></a>三、不可优化的where子句</h3><ol>
-<li>例：下列SQL条件语句中的列都建有恰当的索引，但执行速度却非常慢： <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="keyword">substring</span>(card_no,<span class="number">1</span>,<span class="number">4</span>)=<span class="string">'5378'</span>(<span class="number">13</span>秒) </span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> amount/<span class="number">30</span>&lt; <span class="number">1000</span>（<span class="number">11</span>秒） </span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="keyword">convert</span>(<span class="built_in">char</span>(<span class="number">10</span>),<span class="built_in">date</span>,<span class="number">112</span>)=<span class="string">'19991201'</span>（<span class="number">10</span>秒）</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>—- 分析：<br>—- where子句中对列的任何操作结果都是在SQL运行时逐列计算得到的，因此它不得不进行表搜索，而没有使用该列上面的索引；如果这些结果在查询编译时就能得到，那么就可以被SQL优化器优化，使用索引，避免表搜索，因此将SQL重写成<br>下面这样：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> card_no <span class="keyword">like</span> <span class="string">'5378%'</span>（&lt; <span class="number">1</span>秒） </span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> amount &lt; <span class="number">1000</span>*<span class="number">30</span>（&lt; <span class="number">1</span>秒） </span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="built_in">record</span> <span class="keyword">where</span> <span class="built_in">date</span>= <span class="string">'1999/12/01'</span> （&lt; <span class="number">1</span>秒）</span><br></pre></td></tr></table></figure></p>
-<p>—- 你会发现SQL明显快起来！ </p>
-<ol start="2">
-<li>例：表stuff有200000行，id_no上有非群集索引，请看下面这个SQL： <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="keyword">stuff</span> <span class="keyword">where</span> id_no <span class="keyword">in</span>(<span class="string">'0'</span>,<span class="string">'1'</span>)（<span class="number">23</span>秒）</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>—- 分析：<br>—- where条件中的’in’在逻辑上相当于’or’，所以语法分析器会将in (‘0’,’1’)转化为id_no =’0’ or id_no=’1’来执行。我们期望它会根据每个or子句分别查找，再将结果相加，这样可以利用id_no上的索引；但实际上（根据showplan）,它却采用了”OR策略”，即先取出满足每个or子句的行，存入临时数据库的工作表中，再建立唯一索引以去掉重复行，最后从这个临时表中计算结果。因此，实际过程没有利用id_no上索引，并且完成时间还要受tempdb数据库性能的影响。 </p>
-<p>—- 实践证明，表的行数越多，工作表的性能就越差，当stuff有620000行时，执行时间竟达到220秒！还不如将or子句分<br>开：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="keyword">stuff</span> <span class="keyword">where</span> id_no=<span class="string">'0'</span> </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="keyword">stuff</span> <span class="keyword">where</span> id_no=<span class="string">'1'</span></span><br></pre></td></tr></table></figure></p>
-<p>—- 得到两个结果，再作一次加法合算。因为每句都使用了索引，执行时间只有3秒，在620000行下，时间也只有4秒。或者，用更好的方法，写一个简单的存储过程：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc count_stuff <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">declare</span> @a <span class="built_in">int</span> </span><br><span class="line"><span class="keyword">declare</span> @b <span class="built_in">int</span> </span><br><span class="line"><span class="keyword">declare</span> @c <span class="built_in">int</span> </span><br><span class="line"><span class="keyword">declare</span> @d <span class="built_in">char</span>(<span class="number">10</span>) </span><br><span class="line"><span class="keyword">begin</span> </span><br><span class="line"><span class="keyword">select</span> @a=<span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="keyword">stuff</span> <span class="keyword">where</span> id_no=<span class="string">'0'</span> </span><br><span class="line"><span class="keyword">select</span> @b=<span class="keyword">count</span>(*) <span class="keyword">from</span> <span class="keyword">stuff</span> <span class="keyword">where</span> id_no=<span class="string">'1'</span> </span><br><span class="line"><span class="keyword">end</span> </span><br><span class="line"><span class="keyword">select</span> @c=@a+@b </span><br><span class="line"><span class="keyword">select</span> @d=<span class="keyword">convert</span>(<span class="built_in">char</span>(<span class="number">10</span>),@c) </span><br><span class="line">print @d</span><br></pre></td></tr></table></figure></p>
-<p>—- 直接算出结果，执行时间同上面一样快！<br>—- 总结： </p>
-<p>—- 可见，所谓优化即where子句利用了索引，不可优化即发生了表扫描或额外开销。 </p>
-<p>—- 1. 任何对列的操作都将导致表扫描，它包括数据库函数、计算表达式等等，查询时要尽可能将操作移至等号右边。 </p>
-<p>—- 2. in、or子句常会使用工作表，使索引失效；如果不产生大量重复值，可以考虑把子句拆开；拆开的子句中应该包含索引。 </p>
-<p>—- 3. 要善于使用存储过程，它使SQL变得更加灵活和高效。 </p>
-<p>—- 从以上这些例子可以看出，SQL优化的实质就是在结果正确的前提下，用优化器可以识别的语句，充份利用索引，减少表扫描的I/O次数，尽量避免表搜索的发生。其实SQL的性能优化是一个复杂的过程，上述这些只是在应用层次的一种体现，深入研究还会涉及数据库层的资源配置、网络层的流量控制以及操作系统层的总体设计。 </p>
-
-          
+          <p>—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明显。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/16/如何建立索引，提高查询速度/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -812,175 +966,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/27/王爽《汇编语言》(第三版)实验14解析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jacky">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="NoJacky">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/27/王爽《汇编语言》(第三版)实验14解析/" itemprop="url">王爽《汇编语言》(第三版)实验14解析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T20:35:28+08:00">
-                2018-08-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/汇编/" itemprop="url" rel="index">
-                    <span itemprop="name">汇编</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/27/王爽《汇编语言》(第三版)实验14解析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/27/王爽《汇编语言》(第三版)实验14解析/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/27/王爽《汇编语言》(第三版)实验14解析/" class="leancloud_visitors" data-flag-title="王爽《汇编语言》(第三版)实验14解析">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>代码<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/27/王爽《汇编语言》(第三版)实验14解析/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1035,7 +1020,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1046,7 +1031,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1057,7 +1042,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明显。笔者在工作实践中发现，不良的SQL往往来自于不恰当的索引设计、不充份的连接条件和不可优化的where子句。在对它们进行适当的优化后，其运行速度有了明显地提高！下面我将从这三个">
+<meta name="description" content="—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明显。">
 <meta name="keywords" content="sql,sql优化,索引">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何建立索引，提高查询速度">
 <meta property="og:url" content="http://yoursite.com/2018/10/16/如何建立索引，提高查询速度/index.html">
 <meta property="og:site_name" content="NoJacky">
-<meta property="og:description" content="—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明显。笔者在工作实践中发现，不良的SQL往往来自于不恰当的索引设计、不充份的连接条件和不可优化的where子句。在对它们进行适当的优化后，其运行速度有了明显地提高！下面我将从这三个">
+<meta property="og:description" content="—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明显。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-16T12:48:33.951Z">
+<meta property="og:updated_time" content="2018-11-28T14:28:59.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何建立索引，提高查询速度">
-<meta name="twitter:description" content="—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明显。笔者在工作实践中发现，不良的SQL往往来自于不恰当的索引设计、不充份的连接条件和不可优化的where子句。在对它们进行适当的优化后，其运行速度有了明显地提高！下面我将从这三个">
+<meta name="twitter:description" content="—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明显。">
 
 
 
@@ -374,7 +374,7 @@
       
 
       
-        <p>—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的<br>性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明<br>显。笔者在工作实践中发现，不良的SQL往往来自于不恰当的索引设计、不充份的连接条件和不可优化的where子句。在对<br>它们进行适当的优化后，其运行速度有了明显地提高！下面我将从这三个方面分别进行总结： </p>
+        <p>—- 人们在使用SQL时往往会陷入一个误区，即太关注于所得的结果是否正确，而忽略了不同的实现方法之间可能存在的性能差异，这种性能差异在大型的或是复杂的数据库环境中（如联机事务处理OLTP或决策支持系统DSS）中表现得尤为明显。<br><a id="more"></a>笔者在工作实践中发现，不良的SQL往往来自于不恰当的索引设计、不充份的连接条件和不可优化的where子句。在对它们进行适当的优化后，其运行速度有了明显地提高！下面我将从这三个方面分别进行总结： </p>
 <p>—- 为了更直观地说明问题，所有实例中的SQL运行时间均经过测试，不超过１秒的均表示为（&lt; 1秒）。 </p>
 <p>—- 测试环境–<br>—- 主机：HP LH II<br>—- 主频：330MHZ<br>—- 内存：128兆<br>—- 操作系统：Operserver5.0.4<br>—-数据库：Sybase11.0.3 </p>
 <h3 id="一、不合理的索引设计"><a href="#一、不合理的索引设计" class="headerlink" title="一、不合理的索引设计"></a>一、不合理的索引设计</h3><p>—-例：表record有620000行，试看在不同的索引下，下面几个 SQL的运行情况： </p>
@@ -435,6 +435,7 @@
 <p>—- 2. in、or子句常会使用工作表，使索引失效；如果不产生大量重复值，可以考虑把子句拆开；拆开的子句中应该包含索引。 </p>
 <p>—- 3. 要善于使用存储过程，它使SQL变得更加灵活和高效。 </p>
 <p>—- 从以上这些例子可以看出，SQL优化的实质就是在结果正确的前提下，用优化器可以识别的语句，充份利用索引，减少表扫描的I/O次数，尽量避免表搜索的发生。其实SQL的性能优化是一个复杂的过程，上述这些只是在应用层次的一种体现，深入研究还会涉及数据库层的资源配置、网络层的流量控制以及操作系统层的总体设计。 </p>
+<p>via:<a href="https://www.cnblogs.com/xiaohanghang/p/7885090.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaohanghang/p/7885090.html</a></p>
 
       
     </div>
@@ -507,6 +508,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/28/一种类似深度优先算法的全排列/" rel="prev" title="一种类似深度优先算法的全排列">
+                一种类似深度优先算法的全排列 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -597,7 +602,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -608,7 +613,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -619,7 +624,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
