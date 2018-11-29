@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="此题来源于《啊哈！算法》第四章第一小节  问题描述输入一个数n，输出1~n的全排列。 问题分析理解深度优先算法的关键在于解决“当下该如何做”。至于“下一步怎么做”则与“当下该如何做”是一样的。比如，我们这里写的dfs(step)函数就是为了解决在第step个数应该填入什么。通常的方法就是把每种尝试都去尝试一遍(通常使用的是for循环，例如此题)。当前这一步解决之后就可以进入到下一步dfs(Ste">
+<meta name="description" content="此题来源于《啊哈！算法》第四章第一小节  问题描述输入一个数n，输出1~n的全排列。">
 <meta name="keywords" content="深度优先">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一种类似深度优先算法的全排列">
 <meta property="og:url" content="http://yoursite.com/2018/11/28/一种类似深度优先算法的全排列/index.html">
 <meta property="og:site_name" content="NoJacky">
-<meta property="og:description" content="此题来源于《啊哈！算法》第四章第一小节  问题描述输入一个数n，输出1~n的全排列。 问题分析理解深度优先算法的关键在于解决“当下该如何做”。至于“下一步怎么做”则与“当下该如何做”是一样的。比如，我们这里写的dfs(step)函数就是为了解决在第step个数应该填入什么。通常的方法就是把每种尝试都去尝试一遍(通常使用的是for循环，例如此题)。当前这一步解决之后就可以进入到下一步dfs(Ste">
+<meta property="og:description" content="此题来源于《啊哈！算法》第四章第一小节  问题描述输入一个数n，输出1~n的全排列。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-28T14:27:37.567Z">
+<meta property="og:updated_time" content="2018-11-29T02:58:31.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一种类似深度优先算法的全排列">
-<meta name="twitter:description" content="此题来源于《啊哈！算法》第四章第一小节  问题描述输入一个数n，输出1~n的全排列。 问题分析理解深度优先算法的关键在于解决“当下该如何做”。至于“下一步怎么做”则与“当下该如何做”是一样的。比如，我们这里写的dfs(step)函数就是为了解决在第step个数应该填入什么。通常的方法就是把每种尝试都去尝试一遍(通常使用的是for循环，例如此题)。当前这一步解决之后就可以进入到下一步dfs(Ste">
+<meta name="twitter:description" content="此题来源于《啊哈！算法》第四章第一小节  问题描述输入一个数n，输出1~n的全排列。">
 
 
 
@@ -377,9 +377,9 @@
         <blockquote>
 <p>此题来源于《啊哈！算法》第四章第一小节</p>
 </blockquote>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>输入一个数n，输出1~n的全排列。</p>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>输入一个数n，输出1~n的全排列。<br><a id="more"></a></p>
 <h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>理解深度优先算法的关键在于解决“当下该如何做”。至于“下一步怎么做”则与“当下该如何做”是一样的。<br><br>比如，我们这里写的dfs(step)函数就是为了解决在第step个数应该填入什么。通常的方法就是把每种尝试都去尝试一遍(通常使用的是for循环，例如此题)。当前这一步解决之后就可以进入到下一步dfs(Step+1)了。而下一步的解决方法和当前这一步的解决方法是完全一样的。下面的的伪代码就是深度优先算法的基本模型(DFS)。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step)</span></span>&#123;</span><br><span class="line">    判断边界</span><br><span class="line">    尝试每一种可能：<span class="keyword">for</span>()循环</span><br><span class="line">    &#123;</span><br><span class="line">        完成当前可能需要的操作</span><br><span class="line">        继续下一步 dfs(step);</span><br><span class="line">    &#125;</span><br><span class="line">    返回</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span>
+<h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span>
 
 <span class="keyword">int</span> a[<span class="number">10</span>],book[<span class="number">10</span>],n;  <span class="comment">//C语言的全局变量在没有赋值以前默认为0，因此这里的book数组无需全部再次赋初始值0 </span>
 
@@ -480,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/16/如何建立索引，提高查询速度/" rel="next" title="如何建立索引，提高查询速度">
-                <i class="fa fa-chevron-left"></i> 如何建立索引，提高查询速度
+              <a href="/2018/11/02/深度优先算法（DFS）典例--迷宫最短路径/" rel="next" title="深度优先算法（DFS）典例--迷宫最短路径">
+                <i class="fa fa-chevron-left"></i> 深度优先算法（DFS）典例--迷宫最短路径
               </a>
             
           </div>
@@ -579,7 +579,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -650,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题分析"><span class="nav-number">2.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题分析"><span class="nav-number">2.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码展示"><span class="nav-number">3.</span> <span class="nav-text">代码展示</span></a></li></ol></div>
             
 
           </div>
