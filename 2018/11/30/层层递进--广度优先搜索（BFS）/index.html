@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="深度优先," />
+  <meta name="keywords" content="广度优先," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题描述在一个n行m列的单元格（n，m都小于50）组成的迷宫中，每个单元格要么是空地，要么是障碍物。你的任务是找到一条从迷宫起点通往目标点的最短路径。">
-<meta name="keywords" content="深度优先">
+<meta name="description" content="此题来源于《啊哈！算法》第四章第三小节  问题描述在一个n行m列的单元格（n，m都小于50）组成的迷宫中，每个单元格要么是空地，要么是障碍物。你的任务是找到一条从迷宫起点通往目标点的最短路径。并打印出路径。">
+<meta name="keywords" content="广度优先">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度优先算法（DFS）典例--迷宫最短路径">
-<meta property="og:url" content="http://yoursite.com/2018/11/02/深度优先算法（DFS）典例--迷宫最短路径/index.html">
+<meta property="og:title" content="层层递进--广度优先搜索（BFS）">
+<meta property="og:url" content="http://yoursite.com/2018/11/30/层层递进--广度优先搜索（BFS）/index.html">
 <meta property="og:site_name" content="NoJacky">
-<meta property="og:description" content="问题描述在一个n行m列的单元格（n，m都小于50）组成的迷宫中，每个单元格要么是空地，要么是障碍物。你的任务是找到一条从迷宫起点通往目标点的最短路径。">
+<meta property="og:description" content="此题来源于《啊哈！算法》第四章第三小节  问题描述在一个n行m列的单元格（n，m都小于50）组成的迷宫中，每个单元格要么是空地，要么是障碍物。你的任务是找到一条从迷宫起点通往目标点的最短路径。并打印出路径。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-29T03:08:33.694Z">
+<meta property="og:updated_time" content="2018-11-30T14:57:27.211Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深度优先算法（DFS）典例--迷宫最短路径">
-<meta name="twitter:description" content="问题描述在一个n行m列的单元格（n，m都小于50）组成的迷宫中，每个单元格要么是空地，要么是障碍物。你的任务是找到一条从迷宫起点通往目标点的最短路径。">
+<meta name="twitter:title" content="层层递进--广度优先搜索（BFS）">
+<meta name="twitter:description" content="此题来源于《啊哈！算法》第四章第三小节  问题描述在一个n行m列的单元格（n，m都小于50）组成的迷宫中，每个单元格要么是空地，要么是障碍物。你的任务是找到一条从迷宫起点通往目标点的最短路径。并打印出路径。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/02/深度优先算法（DFS）典例--迷宫最短路径/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/30/层层递进--广度优先搜索（BFS）/"/>
 
 
 
 
 
-  <title>深度优先算法（DFS）典例--迷宫最短路径 | NoJacky</title>
+  <title>层层递进--广度优先搜索（BFS） | NoJacky</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/02/深度优先算法（DFS）典例--迷宫最短路径/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/层层递进--广度优先搜索（BFS）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jacky">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深度优先算法（DFS）典例--迷宫最短路径</h1>
+          <h1 class="post-title" itemprop="name headline">层层递进--广度优先搜索（BFS）</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T10:09:28+08:00">
-                2018-11-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-30T22:09:28+08:00">
+                2018-11-30
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/02/深度优先算法（DFS）典例--迷宫最短路径/#comments" itemprop="discussionUrl">
+                <a href="/2018/11/30/层层递进--广度优先搜索（BFS）/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/11/02/深度优先算法（DFS）典例--迷宫最短路径/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/11/30/层层递进--广度优先搜索（BFS）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -343,7 +343,7 @@
 
           
           
-             <span id="/2018/11/02/深度优先算法（DFS）典例--迷宫最短路径/" class="leancloud_visitors" data-flag-title="深度优先算法（DFS）典例--迷宫最短路径">
+             <span id="/2018/11/30/层层递进--广度优先搜索（BFS）/" class="leancloud_visitors" data-flag-title="层层递进--广度优先搜索（BFS）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -374,13 +374,12 @@
       
 
       
-        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在一个n行m列的单元格（n，m都小于50）组成的迷宫中，每个单元格要么是空地，要么是障碍物。你的任务是找到一条从迷宫起点通往目标点的最短路径。<br><a id="more"></a></p>
-<blockquote>
-<p>输入：行列数和迷宫结构（0代表空地，1代表障碍物）<br><br>输出：最短路径<br>输入格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">5 4 </span><br><span class="line">0 0 1 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 1 0</span><br><span class="line">0 1 0 0 </span><br><span class="line">0 0 0 1</span><br><span class="line">1 1 4 3</span><br></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>此题来源于《啊哈！算法》第四章第三小节</p>
 </blockquote>
-<p>输出格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure></p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>对于深度优先算法的一般形式，我的上一篇博文有详细介绍，参见：<a href="http://nojacky.top/2018/11/28/%E4%B8%80%E7%A7%8D%E7%B1%BB%E4%BC%BC%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E7%AE%97%E6%B3%95%E7%9A%84%E5%85%A8%E6%8E%92%E5%88%97/" target="_blank" rel="noopener">一种类似深度优先算法的全排列</a></p>
-<h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n,m,p,q,min=<span class="number">99999999</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">51</span>][<span class="number">51</span>], book[<span class="number">51</span>][<span class="number">51</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> step)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//定义方向数组next</span></span><br><span class="line">	<span class="keyword">int</span> next[<span class="number">4</span>][<span class="number">2</span>]=&#123;&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,</span><br><span class="line">					&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,</span><br><span class="line">					&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;,</span><br><span class="line">					&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;&#125;; <span class="comment">//顺序为：右，下，左，上。 </span></span><br><span class="line">	<span class="keyword">int</span> tx,ty,i; </span><br><span class="line">	<span class="comment">//判断是否为目标点</span></span><br><span class="line">	<span class="keyword">if</span>(x==p &amp;&amp; y==q)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//更新路径长度</span></span><br><span class="line">		<span class="keyword">if</span>(step &lt; min)</span><br><span class="line">		&#123;</span><br><span class="line">			min = step;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">return</span>; <span class="comment">//返回上一步 </span></span><br><span class="line">	&#125; </span><br><span class="line">	<span class="comment">//枚举四种走法，上下左右。 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;=<span class="number">3</span>; i++) </span><br><span class="line">	&#123;</span><br><span class="line">		tx = x+next[i][<span class="number">0</span>];</span><br><span class="line">		ty = y+next[i][<span class="number">1</span>];</span><br><span class="line">		<span class="comment">//判断是否越界</span></span><br><span class="line">		<span class="keyword">if</span>(tx&lt;<span class="number">1</span> || tx&gt;n || ty&lt;<span class="number">1</span> || ty&gt;m)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="comment">//判断是否是空地或者已经在走过的路径上</span></span><br><span class="line">		<span class="keyword">if</span>(a[tx][ty]==<span class="number">0</span> &amp;&amp; book[tx][ty]==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			book[tx][ty]=<span class="number">1</span>;  <span class="comment">//标记这个节点已经走过 </span></span><br><span class="line">			dfs(tx, ty, step+<span class="number">1</span>); <span class="comment">//开始尝试下一个点</span></span><br><span class="line">			book[tx][ty]=<span class="number">0</span>; <span class="comment">//尝试结束，取消这个点的标记 </span></span><br><span class="line">		&#125; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span>; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,startx,starty;</span><br><span class="line">	<span class="comment">//读入n，m。n为行，m为列 </span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=m; j++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="comment">//读入起始数据</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d %d %d"</span>, &amp;startx, &amp;starty, &amp;p, &amp;q); </span><br><span class="line">	</span><br><span class="line">	<span class="comment">//从起点开始搜索</span></span><br><span class="line">	book[startx][starty]=<span class="number">1</span>;</span><br><span class="line">	dfs(startx, starty, <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, min);</span><br><span class="line">	getchar(); getchar(); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在一个n行m列的单元格（n，m都小于50）组成的迷宫中，每个单元格要么是空地，要么是障碍物。你的任务是找到一条从迷宫起点通往目标点的最短路径。并打印出路径。<br><a id="more"></a></p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>题目与我前面的博文一致，只是多了一个输出路径。<a href="http://nojacky.top/2018/11/02/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E7%AE%97%E6%B3%95%EF%BC%88DFS%EF%BC%89%E5%85%B8%E4%BE%8B--%E8%BF%B7%E5%AE%AB%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" target="_blank" rel="noopener">传送门</a><br><br>解题的方法与前面的深度优先搜索算法不同的是，这里使用了广度优先搜索（Breadth First Search, BFS)算法。此算法使用队列结构，通过一层一层的扩展遍历，将发现的点加入到队列中，直到找到目标点为止。</p>
+<h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">note</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;<span class="comment">//横左边</span></span><br><span class="line">	<span class="keyword">int</span> y;<span class="comment">//纵坐标</span></span><br><span class="line">	<span class="keyword">int</span> f;<span class="comment">//父节点在队列中的编号，本题不需要输出路径，可以不需要f </span></span><br><span class="line">	<span class="keyword">int</span> s;<span class="comment">//步数 </span></span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="comment">//定义一个队列 </span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">note</span> <span class="title">que</span>[2501];</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">51</span>][<span class="number">51</span>]=&#123;<span class="number">0</span>&#125;,book[<span class="number">51</span>][<span class="number">51</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="comment">//方向数组,顺序依次为：右，下，左，上 </span></span><br><span class="line">	<span class="keyword">int</span> next[<span class="number">4</span>][<span class="number">2</span>] =&#123;&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;,&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;&#125;;</span><br><span class="line">	<span class="keyword">int</span> head, tail;</span><br><span class="line">	<span class="keyword">int</span> n,m,i,j,startx,starty,p,q,k,tx,ty,flag,temp; </span><br><span class="line">	<span class="comment">//输入数据</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m); </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=m; j++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//输入起点和终点</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d %d %d"</span>, &amp;startx, &amp;starty, &amp;p, &amp;q); </span><br><span class="line">	<span class="comment">//队列初始化。 head=tail意味着空队 </span></span><br><span class="line">	head=<span class="number">1</span>;</span><br><span class="line">	tail=<span class="number">1</span>;</span><br><span class="line">	<span class="comment">//往队列插入迷宫的入口地址</span></span><br><span class="line">	que[tail].x = startx; </span><br><span class="line">	que[tail].y = starty;</span><br><span class="line">	que[tail].f = <span class="number">0</span>;</span><br><span class="line">	que[tail].s = <span class="number">0</span>;</span><br><span class="line">	tail++;</span><br><span class="line">	book[startx][starty]=<span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//用来标记是否达到目标点，flag=0表示没有达到，1代表达到。 </span></span><br><span class="line">	flag=<span class="number">0</span>;</span><br><span class="line">	<span class="comment">//当队列不为空时循环 </span></span><br><span class="line">	<span class="keyword">while</span>(head &lt; tail)&#123;</span><br><span class="line">		<span class="comment">//枚举四个方向</span></span><br><span class="line">		<span class="keyword">for</span>(k=<span class="number">0</span>; k&lt;=<span class="number">3</span>; k++)&#123;</span><br><span class="line">			<span class="comment">//计算下一个点的坐标 </span></span><br><span class="line">			tx = que[head].x + next[k][<span class="number">0</span>];</span><br><span class="line">			ty = que[head].y + next[k][<span class="number">1</span>];</span><br><span class="line">			<span class="comment">//判断是否越界</span></span><br><span class="line">			<span class="keyword">if</span>(tx&lt;<span class="number">1</span> || tx&gt;n || ty&lt;<span class="number">1</span> || ty&gt;n)&#123;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125; </span><br><span class="line">			<span class="comment">//判断是否是障碍或者是否已经走过</span></span><br><span class="line">			<span class="keyword">if</span>(a[tx][ty]==<span class="number">0</span> &amp;&amp; book[tx][ty]==<span class="number">0</span>)&#123;</span><br><span class="line">				<span class="comment">//将这个点标记为已经走过</span></span><br><span class="line">				<span class="comment">//将这个点入队，步数加一</span></span><br><span class="line">				book[tx][ty]=<span class="number">1</span>;</span><br><span class="line">				que[tail].x = tx;</span><br><span class="line">				que[tail].y = ty;</span><br><span class="line">				que[tail].f = head; <span class="comment">//因为这个点事从Head扩展出来的，所以他的父节点</span></span><br><span class="line">									<span class="comment">//是head，本题不需要求路径，因此本句可省略。 </span></span><br><span class="line">				que[tail].s = que[head].s + <span class="number">1</span>; <span class="comment">//步数是父节点的步数+1 </span></span><br><span class="line">				tail++; </span><br><span class="line">			&#125; </span><br><span class="line">			<span class="comment">//如果目标点已经达到，停止扩展，任务结束，退出循环 </span></span><br><span class="line">			<span class="keyword">if</span>(tx==p &amp;&amp; ty==q)&#123;</span><br><span class="line">				flag=<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">break</span>; </span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="comment">//如果找到目标点，即flag=1，则退出while循环 </span></span><br><span class="line">		<span class="keyword">if</span>(flag==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		head++; <span class="comment">//当一个点扩展结束之后head++才能对队列后面的点再进行扩展 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//输入最少步数，tail指向的是队列队尾（即最后一位）的下一位，所以这里-1 </span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, que[tail<span class="number">-1</span>].s);</span><br><span class="line">	<span class="comment">//如何输出路径？</span></span><br><span class="line">	<span class="comment">//先定义一个二维数组tp，将路径倒叙存储在tp中</span></span><br><span class="line">	<span class="comment">//然后在倒叙遍历这个数据即可！ </span></span><br><span class="line">	<span class="keyword">int</span> tp[<span class="number">100</span>][<span class="number">2</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	temp=tail<span class="number">-1</span>;</span><br><span class="line">	tp[<span class="number">0</span>][<span class="number">0</span>] = que[temp].x;</span><br><span class="line">	tp[<span class="number">0</span>][<span class="number">1</span>] = que[temp].y; </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; que[temp].f!=<span class="number">0</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		temp = que[temp].f;</span><br><span class="line">		tp[i][<span class="number">0</span>] = que[temp].x;</span><br><span class="line">		tp[i][<span class="number">1</span>] = que[temp].y; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=que[tail<span class="number">-1</span>].s; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"(%d, %d) "</span>, tp[i][<span class="number">0</span>], tp[i][<span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	getchar(); getchar();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -426,7 +425,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/深度优先/" rel="tag"># 深度优先</a>
+            <a href="/tags/广度优先/" rel="tag"># 广度优先</a>
           
         </div>
       
@@ -439,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/16/如何建立索引，提高查询速度/" rel="next" title="如何建立索引，提高查询速度">
-                <i class="fa fa-chevron-left"></i> 如何建立索引，提高查询速度
+              <a href="/2018/11/29/深度优先搜索算法（DFS）典例--迷宫最短路径/" rel="next" title="深度优先搜索算法（DFS）典例--迷宫最短路径">
+                <i class="fa fa-chevron-left"></i> 深度优先搜索算法（DFS）典例--迷宫最短路径
               </a>
             
           </div>
@@ -448,10 +447,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/28/一种类似深度优先算法的全排列/" rel="prev" title="一种类似深度优先算法的全排列">
-                一种类似深度优先算法的全排列 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -542,7 +537,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -564,7 +559,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -790,9 +785,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/11/02/深度优先算法（DFS）典例--迷宫最短路径/';
-          this.page.identifier = '2018/11/02/深度优先算法（DFS）典例--迷宫最短路径/';
-          this.page.title = '深度优先算法（DFS）典例--迷宫最短路径';
+          this.page.url = 'http://yoursite.com/2018/11/30/层层递进--广度优先搜索（BFS）/';
+          this.page.identifier = '2018/11/30/层层递进--广度优先搜索（BFS）/';
+          this.page.title = '层层递进--广度优先搜索（BFS）';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
