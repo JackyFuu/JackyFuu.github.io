@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="NoJacky">
 <meta property="og:description" content="此题来源于《啊哈！算法》第四章第四小节  问题描述根据上面的迷宫算出炸弹人应该放置在哪里才能够消灭最多的敌人。前提是小人能够走到炸弹人的位置！！！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/广度优先算法与炸弹人/pic_1.png">
-<meta property="og:updated_time" content="2018-12-01T14:21:36.339Z">
+<meta property="og:image" content="http://yoursite.com/images/广度优先与炸弹人/pic_1.png">
+<meta property="og:updated_time" content="2018-12-01T14:27:35.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="广度优先搜索（BFS）与炸弹人">
 <meta name="twitter:description" content="此题来源于《啊哈！算法》第四章第四小节  问题描述根据上面的迷宫算出炸弹人应该放置在哪里才能够消灭最多的敌人。前提是小人能够走到炸弹人的位置！！！">
-<meta name="twitter:image" content="http://yoursite.com/images/广度优先算法与炸弹人/pic_1.png">
+<meta name="twitter:image" content="http://yoursite.com/images/广度优先与炸弹人/pic_1.png">
 
 
 
@@ -379,7 +379,7 @@
         <blockquote>
 <p>此题来源于《啊哈！算法》第四章第四小节</p>
 </blockquote>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p><img src="/images/广度优先算法与炸弹人/pic_1.png" alt="迷宫图片"><br><br>根据上面的迷宫算出炸弹人应该放置在哪里才能够消灭最多的敌人。<br><br>前提是小人能够走到炸弹人的位置！！！<br><a id="more"></a><br>地图结构如下： <code>#</code> 代表墙，<code>.</code> 代表空地，<code>G</code> 代表敌人。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#############</span><br><span class="line">#GG.GGG#GGG.#</span><br><span class="line">###.#G#G#G#G#</span><br><span class="line">#.......#..G#</span><br><span class="line">#G#.###.#G#G#</span><br><span class="line">#GG.GGG.#.GG#</span><br><span class="line">#G#.#G#.#.#.#</span><br><span class="line">##G...G.....# </span><br><span class="line">#G#.#G###.#G#</span><br><span class="line">#...G#GGG.GG#</span><br><span class="line">#G#.#G#G#.#G#</span><br><span class="line">#GG.GGG#G.GG#</span><br><span class="line">#############</span><br></pre></td></tr></table></figure></p>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p><img src="/images/广度优先与炸弹人/pic_1.png" alt="迷宫图片"><br><br>根据上面的迷宫算出炸弹人应该放置在哪里才能够消灭最多的敌人。<br><br>前提是小人能够走到炸弹人的位置！！！<br><a id="more"></a><br>地图结构如下： <code>#</code> 代表墙，<code>.</code> 代表空地，<code>G</code> 代表敌人。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#############</span><br><span class="line">#GG.GGG#GGG.#</span><br><span class="line">###.#G#G#G#G#</span><br><span class="line">#.......#..G#</span><br><span class="line">#G#.###.#G#G#</span><br><span class="line">#GG.GGG.#.GG#</span><br><span class="line">#G#.#G#.#.#.#</span><br><span class="line">##G...G.....# </span><br><span class="line">#G#.#G###.#G#</span><br><span class="line">#...G#GGG.GG#</span><br><span class="line">#G#.#G#G#.#G#</span><br><span class="line">#GG.GGG#G.GG#</span><br><span class="line">#############</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>输入：地图大小，小人的初始位置，地图结构（如上）。<br><br>输出：炸弹人位置，能够消灭的敌人数。</p>
 </blockquote>
@@ -454,6 +454,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/08/初探Hibernate Validator校验框架（一）/" rel="prev" title="初探Hibernate Validator校验框架（一）:声明bean约束">
+                初探Hibernate Validator校验框架（一）:声明bean约束 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -544,7 +548,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -566,7 +570,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

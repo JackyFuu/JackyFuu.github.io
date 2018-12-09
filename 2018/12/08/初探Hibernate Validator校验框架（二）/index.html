@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="汇编x86," />
+  <meta name="keywords" content="Hibernate-validator," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="王老师有史以来出的最简单的实验题！没有之一。不过话说回来，如果不是他在书上写了，我估计还是不会做的！加油！！！争取有一天自己能够做出来。">
-<meta name="keywords" content="汇编x86">
+<meta name="description" content="上一讲我们大致介绍了一下Hibernate-Validator框架的基本概念和如何声明一个bean约束。有朋友就会问了，我把这个bean声明在这里干嘛呢？别急别急，今天我们就来一起探讨一下，怎样验证我们声明的bean约束。如果你还没有不知道如何声明一个bean约束，请看我的上一篇博文：传送门">
+<meta name="keywords" content="Hibernate-validator">
 <meta property="og:type" content="article">
-<meta property="og:title" content="王爽《汇编语言》(第三版)实验12解析">
-<meta property="og:url" content="http://yoursite.com/2018/08/24/王爽《汇编语言》(第三版)实验12解析/index.html">
+<meta property="og:title" content="初探Hibernate Validator校验框架（二）:验证bean约束">
+<meta property="og:url" content="http://yoursite.com/2018/12/08/初探Hibernate Validator校验框架（二）/index.html">
 <meta property="og:site_name" content="NoJacky">
-<meta property="og:description" content="王老师有史以来出的最简单的实验题！没有之一。不过话说回来，如果不是他在书上写了，我估计还是不会做的！加油！！！争取有一天自己能够做出来。">
+<meta property="og:description" content="上一讲我们大致介绍了一下Hibernate-Validator框架的基本概念和如何声明一个bean约束。有朋友就会问了，我把这个bean声明在这里干嘛呢？别急别急，今天我们就来一起探讨一下，怎样验证我们声明的bean约束。如果你还没有不知道如何声明一个bean约束，请看我的上一篇博文：传送门">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-24T13:57:57.374Z">
+<meta property="og:updated_time" content="2018-12-09T01:45:45.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王爽《汇编语言》(第三版)实验12解析">
-<meta name="twitter:description" content="王老师有史以来出的最简单的实验题！没有之一。不过话说回来，如果不是他在书上写了，我估计还是不会做的！加油！！！争取有一天自己能够做出来。">
+<meta name="twitter:title" content="初探Hibernate Validator校验框架（二）:验证bean约束">
+<meta name="twitter:description" content="上一讲我们大致介绍了一下Hibernate-Validator框架的基本概念和如何声明一个bean约束。有朋友就会问了，我把这个bean声明在这里干嘛呢？别急别急，今天我们就来一起探讨一下，怎样验证我们声明的bean约束。如果你还没有不知道如何声明一个bean约束，请看我的上一篇博文：传送门">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/24/王爽《汇编语言》(第三版)实验12解析/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/08/初探Hibernate Validator校验框架（二）/"/>
 
 
 
 
 
-  <title>王爽《汇编语言》(第三版)实验12解析 | NoJacky</title>
+  <title>初探Hibernate Validator校验框架（二）:验证bean约束 | NoJacky</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/24/王爽《汇编语言》(第三版)实验12解析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/08/初探Hibernate Validator校验框架（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jacky">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">王爽《汇编语言》(第三版)实验12解析</h1>
+          <h1 class="post-title" itemprop="name headline">初探Hibernate Validator校验框架（二）:验证bean约束</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-24T20:35:28+08:00">
-                2018-08-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-08T20:35:28+08:00">
+                2018-12-08
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/汇编/" itemprop="url" rel="index">
-                    <span itemprop="name">汇编</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/24/王爽《汇编语言》(第三版)实验12解析/#comments" itemprop="discussionUrl">
+                <a href="/2018/12/08/初探Hibernate Validator校验框架（二）/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/24/王爽《汇编语言》(第三版)实验12解析/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/12/08/初探Hibernate Validator校验框架（二）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -343,7 +343,7 @@
 
           
           
-             <span id="/2018/08/24/王爽《汇编语言》(第三版)实验12解析/" class="leancloud_visitors" data-flag-title="王爽《汇编语言》(第三版)实验12解析">
+             <span id="/2018/12/08/初探Hibernate Validator校验框架（二）/" class="leancloud_visitors" data-flag-title="初探Hibernate Validator校验框架（二）:验证bean约束">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,11 +375,20 @@
 
       
         <blockquote>
-<p>王老师有史以来出的最简单的实验题！没有之一。不过话说回来，如果不是他在书上写了，我估计还是不会做的！<br>加油！！！争取有一天自己能够做出来。</p>
+<p>上一讲我们大致介绍了一下Hibernate-Validator框架的基本概念和如何声明一个<code>bean</code>约束。有朋友就会问了，我把这个<code>bean</code>声明在这里干嘛呢？<br><br>别急别急，今天我们就来一起探讨一下，怎样验证我们声明的<code>bean</code>约束。<br>如果你还没有不知道如何声明一个bean约束，请看我的上一篇博文：<a href="">传送门</a><br><a id="more"></a></p>
 </blockquote>
-<a id="more"></a>
-<h4 id="主程序代码如下"><a href="#主程序代码如下" class="headerlink" title="主程序代码如下"></a>主程序代码如下</h4><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</span><br><span class="line"></span><br><span class="line">code <span class="meta">segment</span> </span><br><span class="line"><span class="symbol">start:</span>	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="built_in">cs</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ds</span>,<span class="built_in">ax</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">si</span>,offset do0</span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">es</span>,<span class="built_in">ax</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">di</span>,<span class="number">200h</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">cx</span>,offset do0end - offset do0</span><br><span class="line">		<span class="keyword">cld</span>		<span class="comment">;设置传输方向为正</span></span><br><span class="line">		<span class="keyword">rep</span> <span class="keyword">movsb</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">es</span>,<span class="built_in">ax</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">word</span> <span class="built_in">ptr</span> <span class="built_in">es</span>:[<span class="number">0</span>*<span class="number">4</span>],<span class="number">200h</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">word</span> <span class="built_in">ptr</span> <span class="built_in">es</span>:[<span class="number">0</span>*<span class="number">4</span>+<span class="number">2</span>],<span class="number">0</span>	<span class="comment">; 设置中断向量表</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">		<span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">		</span><br><span class="line"><span class="symbol">	do0:</span><span class="keyword">jmp</span> short do0start</span><br><span class="line">		<span class="built_in">db</span> <span class="string">"divide error!"</span></span><br><span class="line">		</span><br><span class="line"><span class="symbol">do0start:</span>	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="built_in">cs</span></span><br><span class="line">			<span class="keyword">mov</span> <span class="built_in">ds</span>,<span class="built_in">ax</span></span><br><span class="line">			<span class="keyword">mov</span> <span class="built_in">si</span>,<span class="number">202h</span>	<span class="comment">;设置ds:si指向字符串</span></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0b800h</span></span><br><span class="line">			<span class="keyword">mov</span> <span class="built_in">es</span>,<span class="built_in">ax</span></span><br><span class="line">			<span class="keyword">mov</span> <span class="built_in">di</span>,<span class="number">12</span>*<span class="number">160</span>+<span class="number">36</span>*<span class="number">2</span></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">mov</span> <span class="built_in">cx</span>,<span class="number">13</span>		<span class="comment">;字符长度为13</span></span><br><span class="line"><span class="symbol">		s:</span>	<span class="keyword">mov</span> <span class="built_in">al</span>,[<span class="built_in">si</span>]</span><br><span class="line">			<span class="keyword">mov</span> <span class="built_in">es</span>:[<span class="built_in">di</span>],<span class="built_in">al</span></span><br><span class="line">			<span class="keyword">inc</span> <span class="built_in">si</span></span><br><span class="line">			<span class="keyword">add</span> <span class="built_in">di</span>,<span class="number">2</span></span><br><span class="line">			<span class="keyword">loop</span> s</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">			<span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line"><span class="symbol">do0end:</span>	<span class="keyword">nop</span></span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-<h4 id="测试代码如下"><a href="#测试代码如下" class="headerlink" title="测试代码如下"></a>测试代码如下</h4><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</span><br><span class="line"></span><br><span class="line">code <span class="meta">segment</span> </span><br><span class="line"><span class="symbol">start:</span>	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">1000h</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="number">bh</span>,<span class="number">1</span></span><br><span class="line">		<span class="keyword">div</span> <span class="number">bh</span></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h2 id="验证bean约束"><a href="#验证bean约束" class="headerlink" title="验证bean约束"></a>验证bean约束</h2><p>  <code>Validator</code>接口是验证Bean约束中最重要的对象。接下来我们将学会如何去获取一个<code>Validator</code>实例。然后你将学会如何使用<code>Validator</code>接口的一些方法。<br></p>
+<h3 id="1、获取一个Validator实例"><a href="#1、获取一个Validator实例" class="headerlink" title="1、获取一个Validator实例"></a>1、获取一个Validator实例</h3><p> 验证实体实例的第一步是获取<code>Validator</code>实例。这个实例是通过<code>Validation</code>类和<code>ValidationFactory</code>获得的。最简单的方法就是使用<code>Validation</code>类的静态方法，<br>如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ValidatorFactory factory = Validation.buildDefaultValidatorFactory();</span><br><span class="line">validator = factory.getValidator();</span><br></pre></td></tr></table></figure></p>
+<p>上面这两行代码将创建一个默认配置的<code>Validator</code>验证器。</p>
+<h3 id="2、Validator的方法"><a href="#2、Validator的方法" class="headerlink" title="2、Validator的方法"></a>2、Validator的方法</h3><p>该Validator接口包含三种方法，可用于验证整个实体或仅实体的单个属性。</p>
+<p>这三种方法都返回了一个<code>Set&lt;ConstraintViolation&gt;</code>。如果验证成功，则该<code>Set</code>为<code>null</code>。否则，<code>H-V</code>就会为每一个违反的约束创建一个<code>ConstraintViolation</code>实例。</p>
+<h4 id="2-1-Validator-validate"><a href="#2-1-Validator-validate" class="headerlink" title="2.1 Validator.validate()"></a>2.1 Validator.validate()</h4><p>使用<code>validate()</code>方法可以完成一个<code>bean</code>中的所有约束的验证。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.hibernate.validator.referenceguide.chapter02.propertylevel;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String manufacturer;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isRegistered;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">(String manufacturer, <span class="keyword">boolean</span> isRegistered)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.manufacturer = manufacturer;</span><br><span class="line">        <span class="keyword">this</span>.isRegistered = isRegistered;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotNull</span>   <span class="comment">//属性级约束</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getManufacturer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> manufacturer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setManufacturer</span><span class="params">(String manufacturer)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.manufacturer = manufacturer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AssertTrue</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isRegistered</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> isRegistered;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRegistered</span><span class="params">(<span class="keyword">boolean</span> isRegistered)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.isRegistered = isRegistered;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Car car = <span class="keyword">new</span> Car( <span class="keyword">null</span>, <span class="keyword">true</span> );</span><br><span class="line"><span class="comment">// 调用validate()方法验证Car实例，但是Car实例没有验证通过，因为它不能够满足manufacturer的不为空约束(@Notnull)。因此会返回一个Set&lt;ConstraintViolation&lt;Car&gt;&gt;。</span></span><br><span class="line">Set&lt;ConstraintViolation&lt;Car&gt;&gt; constraintViolations = validator.validate( car );</span><br><span class="line"></span><br><span class="line">assertEquals( <span class="number">1</span>, constraintViolations.size() );</span><br><span class="line">assertEquals( <span class="string">"must not be null"</span>, constraintViolations.iterator().next().getMessage() );</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-Validator-validateProperty"><a href="#2-2-Validator-validateProperty" class="headerlink" title="2.2 Validator.validateProperty()"></a>2.2 Validator.validateProperty()</h4><p>调用<code>validateProperty()</code>方法可以帮助你验证给定对象中的单个给定属性(property)。属性必须是JavaBeans的属性名称。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Car car = <span class="keyword">new</span> Car( <span class="keyword">null</span>, <span class="keyword">true</span> );</span><br><span class="line"></span><br><span class="line">Set&lt;ConstraintViolation&lt;Car&gt;&gt; constraintViolations = validator.validateProperty(</span><br><span class="line">        car,  <span class="comment">//给定对象</span></span><br><span class="line">        <span class="string">"manufacturer"</span>   <span class="comment">//给定属性</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">assertEquals( <span class="number">1</span>, constraintViolations.size() );</span><br><span class="line">assertEquals( <span class="string">"must not be null"</span>, constraintViolations.iterator().next().getMessage() );</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-3-validator-validateValue"><a href="#2-3-validator-validateValue" class="headerlink" title="2.3 validator.validateValue()"></a>2.3 validator.validateValue()</h4><p>使用<code>validateValue()</code>方法，你可以检查给定类的单个给定属性（给定属性需要赋值来验证）是否可以成功验证。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;ConstraintViolation&lt;Car&gt;&gt; constraintViolations = validator.validateValue(</span><br><span class="line">        Car.class,     <span class="comment">//给定类</span></span><br><span class="line">        <span class="string">"manufacturer"</span>,   <span class="comment">//给定属性</span></span><br><span class="line">        <span class="keyword">null</span>   <span class="comment">//通过给manufacturer赋值为null来测试是否成功验证</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">assertEquals( <span class="number">1</span>, constraintViolations.size() );</span><br><span class="line">assertEquals( <span class="string">"must not be null"</span>, constraintViolations.iterator().next().getMessage() );</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、ConstraintViolation"><a href="#3、ConstraintViolation" class="headerlink" title="3、ConstraintViolation"></a>3、ConstraintViolation</h3><h4 id="3-1-ConstraintViolation方法"><a href="#3-1-ConstraintViolation方法" class="headerlink" title="3.1 ConstraintViolation方法"></a>3.1 ConstraintViolation方法</h4><p><code>ConstraintViolation</code>可以调用关于验证失败原因的许多有用信息的不同方法。以下概述了这些方法。实例下的值参见：2.1 Validator.validate()</p>
+<p>constraintViolations.iterator().next().<br>| 方法 | 作用| 实例|<br>|–|–|–|<br>| getMessage           | 插值的错误消息 |”must not be null”<br>| getMessageTemplate() | 非插值错误消息 |”{…​ NotNull.message}”<br>| getRootBean()        |正在验证的根bean实例 | car<br>| getRootBeanClass() | 正在验证的根bean的类 | Car.class<br>|  getPropertyPath()     |  从根bean中得到验证值得属性路径    |contains one node with kind PROPERTY and name “manufacturer”<br>|getInvalidValue()|没有通过验证的值|null<br>|getConstraintDescriptor()|约束失败的约束元数据 |descriptor for @NotNull</p>
+<h4 id="3-2-利用属性路径"><a href="#3-2-利用属性路径" class="headerlink" title="3.2 利用属性路径"></a>3.2 利用属性路径</h4><p>要确定触发违规的元素，你需要利用<code>getPropertyPath()</code>方法的结果。<br>返回的<code>Path</code>是由节点描述路径组成的。</p>
 
       
     </div>
@@ -426,7 +435,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/汇编x86/" rel="tag"># 汇编x86</a>
+            <a href="/tags/Hibernate-validator/" rel="tag"># Hibernate-validator</a>
           
         </div>
       
@@ -439,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/24/王爽《汇编语言》(第三版)实验11解析/" rel="next" title="王爽《汇编语言》(第三版)实验11解析">
-                <i class="fa fa-chevron-left"></i> 王爽《汇编语言》(第三版)实验11解析
+              <a href="/2018/12/08/初探Hibernate Validator校验框架（一）/" rel="next" title="初探Hibernate Validator校验框架（一）:声明bean约束">
+                <i class="fa fa-chevron-left"></i> 初探Hibernate Validator校验框架（一）:声明bean约束
               </a>
             
           </div>
@@ -448,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/25/王爽《汇编语言》(第三版)检测点13.1(2)/" rel="prev" title="王爽《汇编语言》(第三版)检测点13.1(2)">
-                王爽《汇编语言》(第三版)检测点13.1(2) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#主程序代码如下"><span class="nav-number">1.</span> <span class="nav-text">主程序代码如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试代码如下"><span class="nav-number">2.</span> <span class="nav-text">测试代码如下</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#验证bean约束"><span class="nav-number">1.</span> <span class="nav-text">验证bean约束</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、获取一个Validator实例"><span class="nav-number">1.1.</span> <span class="nav-text">1、获取一个Validator实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、Validator的方法"><span class="nav-number">1.2.</span> <span class="nav-text">2、Validator的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Validator-validate"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 Validator.validate()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-Validator-validateProperty"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 Validator.validateProperty()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-validator-validateValue"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 validator.validateValue()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、ConstraintViolation"><span class="nav-number">1.3.</span> <span class="nav-text">3、ConstraintViolation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-ConstraintViolation方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 ConstraintViolation方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-利用属性路径"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 利用属性路径</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -790,9 +795,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/08/24/王爽《汇编语言》(第三版)实验12解析/';
-          this.page.identifier = '2018/08/24/王爽《汇编语言》(第三版)实验12解析/';
-          this.page.title = '王爽《汇编语言》(第三版)实验12解析';
+          this.page.url = 'http://yoursite.com/2018/12/08/初探Hibernate Validator校验框架（二）/';
+          this.page.identifier = '2018/12/08/初探Hibernate Validator校验框架（二）/';
+          this.page.title = '初探Hibernate Validator校验框架（二）:验证bean约束';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
